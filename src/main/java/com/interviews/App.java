@@ -1,5 +1,14 @@
 package com.interviews;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
+import com.interviews.hexacta.questionCall3.Fatorial;
+import com.interviews.hexacta.questionTest1.MenorInt;
+import com.interviews.hexacta.questionTest2.Combinacoes;
+import com.interviews.hexacta.questionTest3.Exoponecial;
+
 /**
  * Hello world!
  *
@@ -8,6 +17,23 @@ public class App
 {
     public static void main( String[] args )
     {
-        System.out.println( "Hello World! " );
+        //Questão 3 da entrevista Hexacta, retorna o resultado fatorial de um número qualquer
+        Fatorial fatorialClass = new Fatorial();
+        System.out.println("Fatorial do número 5 é: " + fatorialClass.fatorial(5));
+        //Questão 1 da prova Hexacta, retorna o menor inteiro não existente em uma lista
+        MenorInt menorIntClass = new MenorInt();
+        int[] lista = {1, 3, 6, 4, 1, 2};
+        System.out.println("O menor proximo inteiro da lista é: " + menorIntClass.solucao(lista));
+        //Questão 2 da prova Hexacta, retorna as combinacoes que somadas são iguais a 8
+        Combinacoes combinacoes = new Combinacoes();
+        List<Integer> array = new ArrayList<>(Arrays.asList(-2, -1, 0, 2, 4, 7, 8, 9, 9));
+        int soma = 8;
+        System.out.println("Combinacoes para a soma de 8 é: " + combinacoes.retornaCombinacoes(array,soma).toString());
+        //Questão 3 da prova Hexacta, retorna o valor exponencial de um numero
+        Exoponecial exponencial = new Exoponecial();
+        int expoente = 1000;
+        double base = 0.999999999999D;
+        System.out.println("O valor exponencial dos numeros dados é: " + exponencial.calcPMComPow(expoente, base));
+        System.out.println("O valor exponencial dos numeros dados é: " + exponencial.calcPM(expoente, base));
     }
 }
