@@ -11,9 +11,10 @@ import com.interviews.hexacta.questionTest3.Exponencial;
 import com.interviews.hexacta.questionTest4.Intersecao;
 
 /**
- * Hello world!
- *
- */
+ * A classe {@code App} é a classe principal que deve ser executada pra visualizar os resultados
+ * das questões da prova da Hexacta
+ * @author  Icaro Rezende
+ **/
 public class App 
 {
     public static void main( String[] args )
@@ -51,20 +52,20 @@ public class App
         for (int i = 0; i < 15000; i++) {
             listaB[i] = i;
         }
-        //Testa modo antigo
-        System.out.println("Iniciando intersect antigo");
+        //Testa e calcula tempo do modo antigo
+        System.out.println("Iniciando intersect antigo..");
         long tempoInicial = System.currentTimeMillis();
         intersecao.printIntersectionAntiga(listaA, listaB);
         long tempoFinal = System.currentTimeMillis();
         System.out.println("Finalizado intersect antigo em: ");
         System.out.printf("%.3f segundos%n", (tempoFinal - tempoInicial) / 1000d);
-        //Testa modo novo
-        System.out.println("Iniciando intersect novo");
+
+        //Testa e calcula tempo do modo novo
+        System.out.println("Iniciando intersect novo..");
         tempoInicial = System.currentTimeMillis();
         intersecao.printIntersectionNova(listaA, listaB);
         tempoFinal = System.currentTimeMillis();
         System.out.println("Finalizado intersect novo em: ");
         System.out.printf("%.3f segundos%n", (tempoFinal - tempoInicial) / 1000d);
-        
     }
 }
