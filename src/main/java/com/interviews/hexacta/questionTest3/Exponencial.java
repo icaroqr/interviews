@@ -2,7 +2,7 @@ package com.interviews.hexacta.questionTest3;
 
 import java.text.DecimalFormat;
 
-public class Exoponecial {
+public class Exponencial {
     
     public String calcPMComPow(int expoente, double base) {
         DecimalFormat df = new DecimalFormat("0.00000000000");
@@ -10,6 +10,15 @@ public class Exoponecial {
     }
 
     public double calcPM(int expoente, double base) {
-        return Math.pow(base, expoente);
+        double potencia = base;
+        if(expoente == 0){
+            potencia = 1;
+        }else{
+            while(expoente > 1){
+                potencia = potencia * base;
+                expoente--; 
+            }
+        }
+        return potencia;
     }
 }

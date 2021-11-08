@@ -7,7 +7,7 @@ import java.util.List;
 import com.interviews.hexacta.questionCall3.Fatorial;
 import com.interviews.hexacta.questionTest1.MenorInt;
 import com.interviews.hexacta.questionTest2.Combinacoes;
-import com.interviews.hexacta.questionTest3.Exoponecial;
+import com.interviews.hexacta.questionTest3.Exponencial;
 
 /**
  * Hello world!
@@ -30,10 +30,10 @@ public class App
         int soma = 8;
         System.out.println("Combinacoes para a soma de 8 é: " + combinacoes.retornaCombinacoes(array,soma).toString());
         //Questão 3 da prova Hexacta, retorna o valor exponencial de um numero
-        Exoponecial exponencial = new Exoponecial();
+        Exponencial exponencial = new Exponencial();
         int expoente = 1000;
         double base = 0.999999999999D;
-        System.out.println("O valor exponencial dos numeros dados é: " + exponencial.calcPMComPow(expoente, base));
-        System.out.println("O valor exponencial dos numeros dados é: " + exponencial.calcPM(expoente, base));
+        System.out.println("O valor de potência dos numeros é: " + exponencial.calcPM(expoente, base));
+        System.out.println("O valor de potência (usando pow) dos numeros é: " + exponencial.calcPMComPow(expoente, base));
     }
 }
