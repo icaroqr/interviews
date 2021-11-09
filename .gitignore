@@ -24,3 +24,5 @@ hs_err_pid*
 
 # Compiled target directory
 /target
+.idea/**
+icaroInterviewApp.iml
