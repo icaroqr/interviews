@@ -3,6 +3,7 @@ package com.interviews.hexacta;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.PriorityQueue;
 
 import com.interviews.hexacta.questionCall3.Fatorial;
 import com.interviews.hexacta.questionTest1.MenorInt;
@@ -68,6 +69,23 @@ public class App
         System.out.println("Finalizado intersect novo em: ");
         System.out.printf("%.3f segundos%n", (tempoFinal - tempoInicial) / 1000d);
 
+        PriorityQueue<String> p = new PriorityQueue<String>();
+        p.add("dishes");
+        p.add("laundry");
+        p.add("bills");
+        p.offer("bills");
+        System.out.print(p.size() + " " + p.poll());
+        System.out.print(" " + p.peek() + " " + p.poll());
+        System.out.println(" " + p.poll() + " " + p.poll());
+
+        int[] arr = {1};
+        call(arr[0], arr);
+        System.out.println(arr[0] + "," + arr[1]);
+
     
+    }
+    static void call(int i, int [] arr){
+        arr[i] = 6;
+        i = 5;
     }
 }
