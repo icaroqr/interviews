@@ -1,5 +1,8 @@
 package com.interviews.fourSys;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class App {
 
     public static void main(String[] args){
@@ -10,6 +13,9 @@ public class App {
 
         String result2 = findContinuousInterval2(arrayTest,total);
         System.out.println("Result with bad: "+result2);
+
+        int[] arrayDuplicate = {1,2,2,5,3,2,10,2};
+        System.out.println("First duplicated index: "+findFirstDuplicatedIndex(arrayDuplicate));
     }    
 
     //Best solution O(N)
@@ -48,5 +54,18 @@ public class App {
         }
         //If couldn't find an equal sum, returns -1
         return String.valueOf("-1");
+    }
+
+    //
+    public static int findFirstDuplicatedIndex(int[] array){
+        List<Integer> checkeds = new ArrayList<Integer>();
+        for (int i = 0; i < array.length; i++) {
+            if(checkeds.contains(array[i])){
+                return i;
+            }else{
+                checkeds.add(array[i]);
+            }
+        }
+        return -1;
     }
 }
