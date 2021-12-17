@@ -1,6 +1,7 @@
 package com.interviews.fourSys;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 public class App {
 
@@ -15,7 +16,44 @@ public class App {
 
         int[] arrayDuplicate = {1,2,2,5,3,2,10,2};
         System.out.println("First duplicated index: "+findFirstDuplicatedIndex(arrayDuplicate));
+
+        String str = "aaaccjjjdsadsasfsabb";
+        String encoded = encode(str);
+        System.out.println(encoded);
+
+        StringBuilder strFormatada = formatarComEspacos(str,3);
+        System.out.println(strFormatada);
     }    
+
+    private static StringBuilder formatarComEspacos(String str, int n) {
+        String strNoSpace = str.trim();
+        List<String> listChars = new ArrayList<String>(Arrays.asList(strNoSpace));
+        StringBuilder sb = new StringBuilder();
+        for (String letter : listChars) {
+            sb.append(letter);
+            sb.append("\n");
+        }
+        return sb;
+        
+    }
+
+    private static String encode(String str) {
+        String encoded = "";
+        int count = 0;
+        char letter = str.charAt(0);
+        for (int i = 0; i < str.length(); i++) {
+            if(str.charAt(i) == letter){
+                count++;
+            }else{
+                encoded += String.valueOf(count) + letter;
+                count=1;
+                letter = str.charAt(i);
+            }
+        }
+        encoded += String.valueOf(count) + letter;
+        return encoded;
+        
+    }
 
     //Best solution O(N)
     public static String findContinuousInterval(int[] array, int total){
@@ -67,4 +105,6 @@ public class App {
         }
         return -1;
     }
+
+
 }
