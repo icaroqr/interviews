@@ -1,10 +1,10 @@
 package com.interviews.hexacta.questionTest2;
 
-import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
 import org.junit.jupiter.params.provider.MethodSource;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Stream;
 
@@ -24,7 +24,7 @@ class CombinacoesTest {
 
     static Stream<Arguments> paramsProvider() {
         return Stream.of(
-                arguments(List.of(1, 2, 3), 3, List.of(3, 3))
+                arguments(Arrays.asList(1, 2, 3), 3, Arrays.asList(3, 3))
         );
     }
 }

@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class PokerHand
 {    
-    public enum Result { TIE, WIN, LOSS };
+    public enum Result { TIE, WIN, LOSS }
     private String[] cards;
     private String cardsOrder = "23456789TJQKA";
 
@@ -73,7 +73,6 @@ public class PokerHand
             allSameSuitCount++;
           }
        }
-      if(allSameSuitCount != cards.length) return false;
-      return true;
+      return allSameSuitCount == cards.length;
     }
 }
